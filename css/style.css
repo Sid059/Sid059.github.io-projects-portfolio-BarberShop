@@ -1,0 +1,664 @@
+@import url(reset.css);
+
+@font-face {
+    font-family: Montserrat_Regular;
+    src: url(../assets/font/Montserrat/static/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_Bold;
+    src: url(../assets/font/Montserrat/static/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat_Italic;
+    src: url(../assets/font/Montserrat/static/Montserrat-Italic.ttf);
+}
+
+:root {
+    --gradientColor: #009688;
+    --p: 16px;
+    --h1: 2.986rem;
+    --h2: 2.488rem;
+    --h3: 2.074rem;
+    --h4: 1.728rem;
+    --h5: 1.44rem;
+    --h6: 1.2rem;
+    --a: 20px;
+    --whiteShade: #f2f2f2;
+    --blackShade: #2c2c2c;
+    --grayShade: #F5F5F5;
+}
+
+button, a, li{
+    cursor: pointer;
+}
+
+p, a {
+    font-family: Montserrat_Regular;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat_Regular;
+    font-weight: bold;
+}
+
+h1{
+   font-size: 2.986rem;
+   margin-bottom: 16px; 
+   /* font-weight: 800; */
+}
+h2{
+   font-size: 2.488rem;
+} 
+h3{
+   font-size: 2.074rem;
+}
+h4{
+   font-size: 1.728rem;
+   /* margin-bottom: 16px; */
+}
+h5{
+   font-size: 1.44rem;
+}   
+h6{
+   font-size: 1.2rem;
+   /* margin: 12px 8px; */
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 8px auto;
+  width: 60%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*header section*/
+
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.4), var(--gradientColor)), url(/Projects/BarberShop/assets/images/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.navbar {
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.4) 60%,  rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.1) 90%, rgba(0, 0, 0, 0) 100%); */
+    background-image: linear-gradient(rgba(0,0,0,0.6));
+    height: 9vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.navbar img {
+    /* background: lightblue; */
+    width: 130px;
+    height: 38px;
+    margin: 10px 8px;
+}
+
+.navbar .nav-links {
+    flex-grow: 1;
+}
+
+.navbar .nav-links ul {
+    /* background: lightcoral; */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar .nav-links ul li {
+    /* background-color: purple; */
+    /* flex-basis: 12%; */
+    /* border: 1px solid black; */
+    margin: 0 10px;
+    padding: 4px 0;
+    text-align: center;
+}
+
+.navbar .nav-links ul li:nth-of-type(1){
+    margin-left: auto;
+}
+
+.navbar .nav-links ul li:nth-of-type(5){
+    margin-left: auto;
+}
+
+.navbar ul li a {
+    font-size: var(--a);
+    color: var(--whiteShade);
+    text-align: center;
+    /* background-color: violet; */
+}
+
+.navbar ul li a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    margin: auto;
+    border-radius: 40px;
+    background-color: var(--whiteShade);
+    transition: 0.5s all ease-in-out;
+}
+
+.navbar ul li a:hover::after{
+    width: 80%;
+}
+
+.banner-text {
+    /* background-color: violet; */
+    text-align:center;
+    color: var(--whiteShade);
+    padding: 280px 100px;
+}
+
+.banner-text h1 {
+    font-size: 80px;
+}
+
+.banner-text p {
+    font-size: 20px;
+    font-family: Montserrat_Italic;
+} 
+
+.banner-btn {
+    margin: 70px auto 0;
+}
+
+.banner-btn a{
+    font-size: 18px;
+}
+
+.banner-btn a{
+    width: 150px;
+    display: inline-block;  /*on button height and width is applicable but on a and other inline elements they should be inline block first*/
+    margin: 0 10px;
+    padding: 12px 0;
+    border: 1px solid var(--whiteShade);
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+    /* background-color: purple; */
+}
+
+.banner-btn a span{
+    width: 0;
+    height: 100%;
+    position: absolute;
+    background-color: var(--whiteShade);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.5s all ease-in-out;
+}
+
+.banner-btn a:hover span{
+    width: 100%;
+}
+
+.banner-btn a:hover{
+    color: var(--blackShade);
+}
+
+.navbar .fa-solid{
+    font-size: 24px;
+    display: none;
+    color: var(--whiteShade);
+    cursor: pointer;
+}
+
+
+/*-----------Features section--------------*/
+
+.features-container {
+    width: 100%;
+    padding: 70px 0;
+    /* background-color: lightcoral */
+}
+
+.title-text {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.title-text p {
+    margin: auto;
+    font-size: 24px;
+    color: var(--gradientColor);
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.title-text p::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#019587, #fff);
+    position: absolute;
+    top: -24px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.feature-box {
+    /* background-color: lightcoral; */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.features {
+    flex-basis: 50%;
+    /* background-color: brown; */
+    padding-left: 20px;
+}
+
+.features-img {
+    flex-basis: 50%;
+    /* flex-shrink:  0; */
+    margin: auto;
+    /* background-color: lightslategray; */
+}
+
+.features-img img {
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.features h4 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--gradientColor);
+    font-family: Montserrat_Regular;
+}
+
+.features-desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    /* background-color: burlywood; */
+}
+
+/* .feature-icon {
+    background-color: coral;
+} */
+
+.feature-icon .fa-solid{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    /* line-height: 50px;  for placing the icon in the center, but can be done using padding as well*/
+    padding-top: 8px;
+    border-radius: 8px;
+    color: var(--gradientColor);
+    border: 1.5px solid var(--gradientColor);
+}
+
+.feature-text p {
+    text-align: initial;
+    padding: 0 20px;
+}
+
+
+/*---------Services section---------*/
+
+.service-container {
+    width: 100%;
+    padding: 70px 0;
+    background-color: var(--grayShade);
+}
+
+.service-box {
+    /* background-color: burlywood; */
+    height: auto;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.single-service {
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: var(--whiteShade);
+    cursor: pointer;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.single-service img {
+    width: 100%;
+    /* min-width: 300px; without min-width the flex-shrink does not work as the width for the image is set to 100%*/
+    border-radius: 7px;
+    display: block; /*to fit the image with the overlay*/
+    /* display: block; either make this block and overflow hidden or give it a border radius same as that of single-service container*/
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    background: linear-gradient(rgba(0,0,0,0.5), var(--gradientColor));
+    /* background-color: aquamarine; */
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    opacity: 0;
+    transition: 0.5s all ease-in-out;
+}
+
+.single-service:hover .overlay{
+    opacity: 1;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.service-desc{
+    /* color: var(--blackShade); */
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.8s all ease-in-out;
+    /* margin: auto; */
+}
+
+.service-desc h3{
+    font-size: var(--h5);
+}
+
+.single-service:hover .service-desc{
+    bottom: 40%;
+    opacity: 1;
+}
+
+
+/*-------testimonial section-------*/
+.testimonial-container {
+    width: 100%;
+    /* background-color: burlywood; */
+    padding: 70px 0;
+}
+
+.testimonial-row {
+    /* background-color: cadetblue; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap:wrap;
+}
+
+.testimonial-col {
+    cursor: pointer;
+    /* background-color: blueviolet; */
+    flex-basis: 32%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px 3px #00968814;
+    transition: 0.5s all ease-in-out;
+    /* transition: transform 0.5s; */
+}
+
+.user-info small, h6{
+    font-family: Montserrat_Regular;
+}
+
+.user-info h6 {
+    font-weight: bold;
+}
+
+.user-info small {
+    color: var(--gradientColor);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.user img {
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.user-info .fa-brands {
+    margin-left: 10px;
+    color: #27c0ff;
+    font-size: 20px;
+}
+
+.testimonial-col:hover{
+    transform: translateY(-8px);
+}
+
+
+/*-----footer section-----*/
+.footer-container {
+    padding: 100px 0 20px;  /*top   left,right   bottom*/
+    background: var(--grayShade);
+    position: relative;
+}
+
+.footer-row {
+    width: 80%;
+    margin: 0 auto;
+    /* background-color:chocolate; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right{
+    flex-basis: 48%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-row h6{
+    margin: 10px 0;
+}
+
+.footer-row p{
+    line-height: 35px;
+}
+
+.footer-left .fa-solid, .footer-right .fa-solid{
+    font-size: 20px;
+    color: var(--gradientColor);
+    margin: 10px;
+}
+
+.footer-img {
+    max-width: 370px;
+    opacity: 0.1;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-links .fa-brands {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid var(--gradientColor);
+    border-radius: 4px;
+    color: var(--gradientColor);
+    margin: 40px 5px 0;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+
+.social-links .fa-brands:hover {
+    background: var(--gradientColor);
+    color: var(--whiteShade);
+    transform: translateY(-8px);
+}
+
+.social-links p {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 770px){
+
+    .banner-text h1 {
+        font-size: 56px;
+        font-family: Montserrat_Bold;
+    }
+
+    .navbar .fa-solid {
+        display: inline-block;
+    }
+
+    .navbar .nav-links {
+        /* display: flex; */
+        position: absolute;
+        top: 0;
+        /* right: 0; */
+        right: -20vh;
+        height: 100vh;
+        width: 20vh;
+        background-color: var(--gradientColor);
+        transition: 0.5s all ease-in-out;;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .nav-links ul li:hover {
+        background-color: #0c6a60;
+    }
+
+    .navbar .nav-links ul .fa-xmark:hover {
+        background-color: #0c6a60;
+    }
+
+    .navbar .nav-links ul li, .navbar .nav-links ul .fa-xmark{
+        /* background-color: coral; */
+        display: block;
+        width: 100%;
+        margin: 16px 4px 0;
+        padding: 16px 12px;
+        text-align: left;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .navbar .fa-bars {
+        /* display: block; */
+        /* background-color: coral; */
+        padding: 16px 14px 16px 0px;
+    }
+
+    .navbar ul li a::after {
+        display: none;
+    }
+
+    .banner-btn a {
+        display: block;
+        margin: 20px auto;
+    }
+
+
+    /*-------feature section--------*/
+
+    .title-text h1 {
+        font-size: var(--h2);
+    }
+
+    .features {
+        flex-basis: 100%;
+    }
+
+    .features-img {
+        flex-basis: 100%;
+        /* background-color: lightslategray; */
+    }
+
+    .features-img img {
+        width: 100%;
+        /* margin: auto; */
+    }
+
+
+    /*--------services section-------*/
+    .single-service {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* .single-service p {
+        font-size: 14px; 
+    } */
+
+    hr {
+        margin: 5px auto;
+    }
+
+    .single-service:hover .service-desc{
+        bottom: 40% !important; /*The !important flag forces this specific bottom: 40% rule to override any other bottom property for .service-desc, even if those other rules have higher specificity or come later in the stylesheet. */
+    }
+
+
+    /*-----testimonial section------*/
+    .testimonial-col {
+        flex-basis: 100%;
+    }
+
+    /*-----footer section-----*/
+    .footer-left, .footer-right{ 
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    .footer-img {
+        top: 25%;
+    }
+}   
