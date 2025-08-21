@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: Montserrat_Regular;
-    src: url(../assets/font/Montserrat/static/Montserrat-Regular.ttf);
+    src: url(assets/font/Montserrat/static/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: Montserrat_Bold;
-    src: url(../assets/font/Montserrat/static/Montserrat-Bold.ttf);
+    src: url(assets/font/Montserrat/static/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: Montserrat_Italic;
-    src: url(../assets/font/Montserrat/static/Montserrat-Italic.ttf);
+    src: url(assets/font/Montserrat/static/Montserrat-Italic.ttf);
 }
 
 :root {
@@ -663,3 +663,4 @@ html {
     }
 
 }   
+
