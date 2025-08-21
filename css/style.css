@@ -81,7 +81,7 @@ html {
 /*header section*/
 
 .banner {
-    background-image: linear-gradient(rgba(0,0,0,0.4), var(--gradientColor)), url(/Projects/BarberShop/assets/images/banner.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4), var(--gradientColor)), url(../assets/images/banner.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -661,4 +661,5 @@ html {
     .footer-img {
         top: 25%;
     }
+
 }   
